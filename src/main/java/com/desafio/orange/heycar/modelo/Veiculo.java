@@ -9,7 +9,7 @@ public class Veiculo {
     private Long id;
     private String marca;
     private String modelo;
-    private int ano;
+    private int anoModelo;
     private Double valor;
     @ManyToOne
     private Usuario proprietarie;
@@ -17,60 +17,59 @@ public class Veiculo {
     private Boolean rodizioAtivo;
 
 
+    public Veiculo() {
 
-    public Boolean getRodizioAtivo() {
-        return rodizioAtivo;
     }
 
-    public String getDiaRodizio() {
-        return diaRodizio;
+    public Veiculo(Long id, String marca, String modelo, int anoModelo, Double valor) {
+        this.id = id;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.anoModelo = anoModelo;
+        this.valor = valor;
+    }
+
+    public void setProprietarie(Usuario proprietarie) {
+        this.proprietarie = proprietarie;
+    }
+
+    public void setDiaRodizio(String diaRodizio) {
+        this.diaRodizio = diaRodizio;
+    }
+
+    public void setRodizioAtivo(Boolean rodizioAtivo) {
+        this.rodizioAtivo = rodizioAtivo;
     }
 
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getMarca() {
         return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
     }
 
     public String getModelo() {
         return modelo;
     }
 
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
-    public int getAno() {
-        return ano;
-    }
-
-    public void setAno(int ano) {
-        this.ano = ano;
+    public int getAnoModelo() {
+        return anoModelo;
     }
 
     public Double getValor() {
         return valor;
     }
 
-    public void setValor(Double valor) {
-        this.valor = valor;
-    }
-
     public Usuario getProprietarie() {
         return proprietarie;
     }
 
-    public void setProprietarie(Usuario proprietarie) {
-        this.proprietarie = proprietarie;
+    public String getDiaRodizio() {
+        return diaRodizio;
+    }
+
+    public Boolean getRodizioAtivo() {
+        return rodizioAtivo;
     }
 }
